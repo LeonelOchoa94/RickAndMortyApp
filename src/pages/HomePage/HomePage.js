@@ -12,6 +12,7 @@ export const HomePage = ({setCharacter}) => {
     setCharacter(input);
     history.replace("/character")
   }
+
   function handleInputChange(event){
     setInput(event.target.value);
   }
@@ -22,22 +23,20 @@ export const HomePage = ({setCharacter}) => {
     history.replace("/character");
   }
 
-
-
-    return (
+  return (
     <Home>
       <Wrapper>
-          <img src={Logo} alt="Imagen de Logo"/>
+        <img src={Logo} alt="Imagen de Logo"/>
         
         <SearchBar
           placeholder= "Buscar el personaje"
           value={input}
           onChange={handleInputChange}
           type="search"
-          />
+        />
         <ButtonsWrapper>
-        <button onClick={handleSearchClick}>Buscar</button>
-        <button onClick={handleSearchClickAzar} >¡Azar!</button>
+          <button onClick={handleSearchClick}>Buscar</button>
+          <button onClick={handleSearchClickAzar} >¡Azar!</button>
         </ButtonsWrapper>
       </Wrapper>
     </Home>
@@ -45,23 +44,22 @@ export const HomePage = ({setCharacter}) => {
 }
 
 const Home = styled.div`
-width: 100vw;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-/* background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);; */
-color: white;
-
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);; */
+  color: white;
 `
 
 const Wrapper = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-width: 50%;
-margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin-bottom: 150px;
 `
 
 
