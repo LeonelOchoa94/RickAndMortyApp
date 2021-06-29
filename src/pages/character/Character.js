@@ -2,10 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { useHistory } from 'react-router';
 
-// Borrar código comentado del componente
 
 export const Character = ( {character} ) => {
-    // const [character, setCharacter ] = React.useState()
     const [characterData, setCharacterData] = React.useState()
 
     
@@ -17,12 +15,6 @@ export const Character = ( {character} ) => {
 
     console.log(characterData);
 
-    // const history = useHistory()
-
-    // function Back() {
-    //     history.replace("/")
-    //   }
-    
     const history = useHistory()
 
     function handleVolverClick() {
