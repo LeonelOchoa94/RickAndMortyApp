@@ -1,44 +1,55 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useHistory } from 'react-router';
 
 export const Character = ( {character} ) => {
     // const [character, setCharacter ] = React.useState()
     const [characterData, setCharacterData] = React.useState()
 
+    
+
     React.useEffect(() => {
-        fetch(`https://rickandmortyapi.com/api/character/${character}`)
+        fetch(`https://rickandmortyapi.com/api/character?name=${character}`)
         .then((response) => response.json().then((data) => setCharacterData(data)))
-    }, )
+    }, [character] )
+
+    console.log(characterData);
 
     // const history = useHistory()
 
     // function Back() {
     //     history.replace("/")
     //   }
+    
+    const history = useHistory()
+
+    function handleVolverClick() {
+        history.replace("/")
+      }
 
     return (
         <Home>
         <ButtonsWrapper>
-        <button>Volver</button>
+        <button onClick={handleVolverClick}>Volver</button>
         </ButtonsWrapper>
         {characterData && (
         <Wrapped>
             <div>
-            <img src={characterData.image} alt="Imagen del personaje"/>
+            <img src={characterData.results[0].image} alt="Imagen del personaje"/>
             </div>
             <div>
             <h1>
-                Nombre: {characterData.name}
+                Nombre: {characterData.results[0].name}
             </h1>
-            <h2>
-                Estado: {characterData.status}
+             <h2>
+                Estado: {characterData.results[0].status}
             </h2>
             <h2>
-                Especie: {characterData.species}
+                Especie: {characterData.results[0].species}
             </h2>
             <h2>
-                Género: {characterData.gender}
-            </h2>
+                Género: {characterData.results[0].gender}
+            </h2> 
 
             </div>
         </Wrapped>

@@ -16,11 +16,8 @@ export const HomePage = ({setCharacter}) => {
     setInput(event.target.value);
   }
 
-  function handleSearchClickAzar(){
-    const random = Math.floor(Math.random()*100);
-    setCharacter(random);
-    history.replace("/character");
-  }
+
+
 
 
 
@@ -37,7 +34,6 @@ export const HomePage = ({setCharacter}) => {
           />
         <ButtonsWrapper>
         <button onClick={handleSearchClick}>Buscar</button>
-        <button onClick={handleSearchClickAzar} >¡Azar!</button>
         </ButtonsWrapper>
       </Wrapper>
     </Home>
@@ -69,7 +65,8 @@ margin-bottom: 150px;
 const ButtonsWrapper = styled.div`
 width: 100%;
 display: flex;
-gap: 20px;
+justify-content: center;
+  
 
 button {
   background-color: #5e92f3;
